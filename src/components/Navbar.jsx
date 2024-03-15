@@ -13,16 +13,25 @@ const Navbar = ({ planets }) => {
   };
 
   return (
-    <nav className="nav flex justify-between relative w-full py-[1rem] px-[1.5rem] h-[4.25rem] border-b-[1.5px] border-gray-700">
-      <div className="flex justify-between items-center w-full">
+    <nav className="nav flex md:flex-col lg:flex-row justify-between relative w-full py-[1rem] px-[1.5rem] h-[4.25rem] md:h-auto md:pt-8 md:gap-4 border-b-[1.5px] border-gray-700">
+      <div className="flex justify-between md:justify-center lg:justify-start items-center w-full lg:px-[1.5rem]">
         <div className="font-leagueSpartan font-medium text-logo tracking-tighter flex items-center h-full">
-          <p className="">THE PLANETS</p>
+          <span className=" md:text-stats">THE PLANETS</span>
         </div>
-        <figure role="button" aria-label="menu" onClick={hamburgerClick}>
+        <figure
+          className="md:hidden"
+          role="button"
+          aria-label="menu"
+          onClick={hamburgerClick}
+        >
           <img src={hamburger} alt="hamburger" />
         </figure>
       </div>
-      <PlanetLinks planets={planets} isNavOpen={isNavOpen} />
+      <PlanetLinks
+        planets={planets}
+        isNavOpen={isNavOpen}
+        setIsNavOpen={setIsNavOpen}
+      />
     </nav>
   );
 };

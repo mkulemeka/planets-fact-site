@@ -29,7 +29,7 @@ export default {
         logo: "1.5rem",
         regular: "1rem",
         heading: "5rem",
-        stats: "2.5rem",
+        stats: "2.25rem",
         subHeading: "0.75rem",
         statsHeading: "0.6875rem",
       },
