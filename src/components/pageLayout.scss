@@ -1,0 +1,57 @@
+.planet-section {
+  display: grid;
+  grid-template-areas:
+    "planet-links"
+    "planet-image"
+    "planet-details"
+    "planet-stats";
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      "planet-image planet-image planet-image planet-details"
+      "planet-image planet-image planet-image planet-details"
+      "planet-image planet-image planet-image planet-links"
+      "planet-stats planet-stats planet-stats planet-stats";
+  }
+}
+
+.planet-section__image {
+  grid-area: planet-image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 65%;
+  }
+}
+
+.planet-section__details {
+  grid-area: planet-details;
+  width: 345px;
+  min-height: 235px;
+}
+
+.planet-section__stats {
+  grid-area: planet-stats;
+  .stats-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    h3 {
+      font-family: Spartan, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    p {
+      font-family: Antonio, sans-serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+    }
+  }
+}

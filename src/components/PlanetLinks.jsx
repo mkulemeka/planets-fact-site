@@ -16,7 +16,7 @@ const PlanetLinks = ({ planets, isNavOpen, setIsNavOpen }) => {
     <>
       {isNavOpen && (
         <ul
-          className={`flex flex-col md:flex-row md:justify-center md:gap-[2.0625rem] absolute md:static left-0 top-[7.0625rem] uppercase w-full px-[1.5rem] z-10 transition-all ease-in-out delay-1000 ${
+          className={`flex flex-col md:flex-row md:justify-center md:gap-[2.0625rem] absolute md:static left-0 top-[4.25rem] uppercase w-full px-[1.5rem] pt-[2.35rem] md:pt-0 z-10 transition-all ease-in-out delay-1000 bg-darkBlue ${
             isNavOpen ? "opacity-100" : "opacity-0"
           }`}
         >
