@@ -3,6 +3,7 @@ import * as Pages from "./pages";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { AppLayout } from "./components";
+import { PlanetProvider } from "./context/PlanetProvider";
 import data from "../data.json";
 
 const App = () => {
@@ -36,7 +37,11 @@ const App = () => {
       children: routes,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <PlanetProvider>
+      <RouterProvider router={router} />
+    </PlanetProvider>
+  );
 };
 
 export default App;

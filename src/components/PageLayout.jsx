@@ -1,15 +1,18 @@
 import "./pageLayout.scss";
 
+import {
+  ButtonsContainer,
+  IllustrationContainer,
+  IntroContainer,
+  StatsContainer,
+} from "./index";
+
 import PropTypes from "prop-types";
 
 const PageLayout = ({ planetData }) => {
   return (
-    <section className="planet-section max-w-[90%]  mx-auto">
-      <section className="planet-section__links">
-        <a href="/">Overview</a>
-        <a href="/">Internal Structure</a>
-        <a href="/">Surface Geology</a>
-      </section>
+    <section className="planet-section md:max-w-[90%]  mx-auto">
+      <ButtonsContainer planetName={planetData.name} />
       <figure className="planet-section__image">
         <img
           src={planetData.images.planet}
@@ -25,24 +28,7 @@ const PageLayout = ({ planetData }) => {
           <a href={planetData.overview.source}>Wikipedia</a>
         </div>
       </section>
-      <section className="planet-section__stats grid gap-2 md:grid-cols-4">
-        <div className="stats-stat uppercase">
-          <h3>Rotation Time</h3>
-          <p>{planetData.rotation}</p>
-        </div>
-        <div className="stats-stat uppercase">
-          <h3>Revolution Time</h3>
-          <p>{planetData.revolution}</p>
-        </div>
-        <div className="stats-stat uppercase">
-          <h3>Radius</h3>
-          <p>{planetData.radius}</p>
-        </div>
-        <div className="stats-stat uppercase">
-          <h3>Average Temp.</h3>
-          <p>{planetData.temperature}</p>
-        </div>
-      </section>
+      <StatsContainer planetData={planetData} />
     </section>
   );
 };
