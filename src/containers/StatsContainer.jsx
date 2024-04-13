@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { Stat } from "./index";
+import { Stat } from "../components/index";
 
 const StatsContainer = ({ planetData }) => {
   const { rotation, revolution, radius, temperature } = planetData;
   return (
-    <section className="planet-section__stats grid gap-2 md:grid-cols-4">
+    <section className="planet-section__stats grid gap-4 md:grid-cols-4 px-[1.5rem] lg:gap-8 lg:py-6">
       <Stat title="Rotation Time" stat={rotation} />
       <Stat title="Revolution Time" stat={revolution} />
       <Stat title="Radius" stat={radius} />

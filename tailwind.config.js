@@ -43,6 +43,10 @@ export default {
         little: "1px",
         negative: "-1.5px",
       },
+      screens: {
+        md: "768px",
+        lg: "1025px",
+      },
     },
   },
   plugins: [],

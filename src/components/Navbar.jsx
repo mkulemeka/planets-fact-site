@@ -18,14 +18,13 @@ const Navbar = ({ planets }) => {
         <div className="font-leagueSpartan font-medium text-logo tracking-tighter flex items-center h-full">
           <span className=" md:text-stats">THE PLANETS</span>
         </div>
-        <figure
+        <button
           className="md:hidden"
-          role="button"
           aria-label="menu"
           onClick={hamburgerClick}
         >
           <img src={hamburger} alt="hamburger" />
-        </figure>
+        </button>
       </div>
       <PlanetLinks
         planets={planets}

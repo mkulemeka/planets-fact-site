@@ -1,4 +1,4 @@
-import { PageLayout } from "../components";
+import { PageLayout } from "../containers";
 import PropTypes from "prop-types";
 
 const Mercury = ({ planetData }) => {

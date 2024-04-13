@@ -8,10 +8,26 @@
 
   @media (min-width: 768px) {
     grid-template-areas:
+      "planet-image planet-image"
+      "planet-image planet-image"
+      "planet-details planet-links"
+      "planet-stats planet-stats";
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-areas:
       "planet-image planet-image planet-image planet-details"
       "planet-image planet-image planet-image planet-details"
       "planet-image planet-image planet-image planet-links"
       "planet-stats planet-stats planet-stats planet-stats";
+
+    grid-template-columns: repeat(2, 1fr) 0.75fr 1.25fr;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 70%;
   }
 }
 
@@ -21,14 +37,18 @@
   justify-content: center;
   align-items: center;
 
-  @media screen and (min-width: 768px) {
-    max-width: 65%;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    //height: 426px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 100%;
   }
 }
 
 .planet-section__details {
   grid-area: planet-details;
-  width: 345px;
+
   min-height: 235px;
 }
 
@@ -36,22 +56,23 @@
   grid-area: planet-stats;
   .stats-stat {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @media (min-width: 768px) {
-      justify-content: flex-start;
-    }
 
     h3 {
       font-family: Spartan, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
     }
     p {
       font-family: Antonio, sans-serif;
-      font-size: 2.25rem;
+      font-size: 2rem;
       font-weight: 600;
+    }
+
+    @media (min-width: 1025px) {
+      h3 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 2.5rem;
+      }
     }
   }
 }
