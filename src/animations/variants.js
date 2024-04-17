@@ -15,4 +15,25 @@ const linkVariant = {
   show: { opacity: 1, x: 0 },
 };
 
-export { navVariant, linkVariant };
+const pageVariant = {
+  hidden: { opacity: 0, x: -20 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+};
+
+const planetItemVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    transition: {
+      transform: { translateX: 0, scale: 1, rotate: 0, translateZ: 0 },
+    },
+  },
+};
+
+export { navVariant, linkVariant, pageVariant, planetItemVariant };

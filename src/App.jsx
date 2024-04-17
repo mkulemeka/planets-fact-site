@@ -6,18 +6,18 @@ import { AppLayout } from "./components";
 import { PlanetProvider } from "./context/PlanetProvider";
 import data from "../data.json";
 
-const App = () => {
-  const planets = [
-    "Mercury",
-    "Venus",
-    "Earth",
-    "Mars",
-    "Jupiter",
-    "Saturn",
-    "Uranus",
-    "Neptune",
-  ];
+const planets = [
+  "Mercury",
+  "Venus",
+  "Earth",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+];
 
+const App = () => {
   const routes = planets.map((planetName) => {
     const Planet = Pages[planetName];
     const planetData = data.find((planet) => planet.name === planetName);

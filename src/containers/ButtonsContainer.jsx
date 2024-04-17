@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 
 const ButtonsContainer = ({ planetName }) => {
-  const { windowWidth, setActiveButton } =
-    useContext(PlanetContext);
+  const { windowWidth, setActiveButton } = useContext(PlanetContext);
 
   // set the active button
   const handleClick = (e) => setActiveButton(e.target.id);

@@ -7,6 +7,16 @@ import PropTypes from "prop-types";
 import { images } from "../assets";
 import { motion } from "framer-motion";
 
+const linkBeforeStyles = {
+  content: "''",
+  position: "absolute",
+  top: "-25px",
+  left: 0,
+  width: "100%",
+  height: "4px",
+  transition: "background-color 0.5s",
+};
+
 const PlanetLinks = ({ planets, isNavOpen, setIsNavOpen }) => {
   const { planetColors, windowWidth } = useContext(PlanetContext);
   const { chevron } = images;
@@ -30,16 +40,6 @@ const PlanetLinks = ({ planets, isNavOpen, setIsNavOpen }) => {
       return planetColors[planet.toLowerCase()];
   };
 
-  const linkBeforeStyles = {
-    content: "''",
-    position: "absolute",
-    top: "-32px",
-    left: 0,
-    width: "100%",
-    height: "4px",
-    transition: "background-color 0.5s",
-  };
-
   return (
     <>
       {isNavOpen && (
@@ -54,7 +54,7 @@ const PlanetLinks = ({ planets, isNavOpen, setIsNavOpen }) => {
             <motion.li key={planet} variants={linkVariant}>
               <Link
                 to={planet === "Mercury" ? "/" : `/${planet.toLowerCase()}`}
-                className={`flex items-center pt-[1.25rem] pb-[1.25rem] tracking-widest font-medium md:border-0 md:relative ${
+                className={`flex items-center pt-[1.25rem] pb-[1.25rem] tracking-widest font-medium md:border-0 md:relative lg:text-[0.75rem] ${
                   planet !== "Mercury" && "border-t-[1.5px] border-gray-700"
                 }`}
                 {...(windowWidth < 768 && { onClick: handleLinkClick })}

@@ -1,5 +1,6 @@
 import { PlanetContext } from "../context/PlanetProvider";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import { useContext } from "react";
 
 const IllustrationContainer = ({ planetImages, planetName, planetSizes }) => {
@@ -45,7 +46,7 @@ const IllustrationContainer = ({ planetImages, planetName, planetSizes }) => {
 
   return (
     <figure className="planet-section__image px-[1.5rem] relative h-[300px]">
-      <div id={planetName} style={imageStyles}></div>
+      <motion.div id={planetName} style={imageStyles}></motion.div>
       {activeButton === "Surface" && <span style={beforeStyles}></span>}
     </figure>
   );
