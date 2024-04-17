@@ -2,6 +2,7 @@ import * as Pages from "./pages";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import { AnimatePresence } from "framer-motion";
 import { AppLayout } from "./components";
 import { PlanetProvider } from "./context/PlanetProvider";
 import data from "../data.json";
@@ -33,7 +34,11 @@ const App = () => {
 
   const router = createBrowserRouter([
     {
-      element: <AppLayout planets={planets} />,
+      element: (
+        <AnimatePresence mode="wait">
+          <AppLayout planets={planets} />
+        </AnimatePresence>
+      ),
       children: routes,
     },
   ]);

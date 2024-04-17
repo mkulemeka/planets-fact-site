@@ -1,3 +1,5 @@
+// Variants for navigation
+
 const navVariant = {
   hidden: { opacity: 0 },
   show: {
@@ -11,15 +13,38 @@ const navVariant = {
 };
 
 const linkVariant = {
-  hidden: { opacity: 0, x: -20 },
+  hidden: { opacity: 0, x: 20 },
   show: { opacity: 1, x: 0 },
 };
+
+// Components variants
+
+const componentVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delay: 0.25,
+      duration: 0.7,
+    },
+  },
+};
+
+// Page variants
 
 const pageVariant = {
   hidden: { opacity: 0, x: -20 },
   show: {
     opacity: 1,
     x: 0,
+    transition: {
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    x: 20,
     transition: {
       delay: 0.5,
       duration: 1,
@@ -36,4 +61,10 @@ const planetItemVariant = {
   },
 };
 
-export { navVariant, linkVariant, pageVariant, planetItemVariant };
+export {
+  componentVariant,
+  navVariant,
+  linkVariant,
+  pageVariant,
+  planetItemVariant,
+};

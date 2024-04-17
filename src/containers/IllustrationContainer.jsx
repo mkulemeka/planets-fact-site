@@ -1,5 +1,6 @@
 import { PlanetContext } from "../context/PlanetProvider";
 import PropTypes from "prop-types";
+import { componentVariant } from "../animations/variants";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 
@@ -42,12 +43,20 @@ const IllustrationContainer = ({ planetImages, planetName, planetSizes }) => {
     backgroundRepeat: "no-repeat",
     width: imageWidth(),
     height: "100%",
+    transition: "background-image 0.7s",
   };
 
   return (
     <figure className="planet-section__image px-[1.5rem] relative h-[300px]">
       <motion.div id={planetName} style={imageStyles}></motion.div>
-      {activeButton === "Surface" && <span style={beforeStyles}></span>}
+      {activeButton === "Surface" && (
+        <motion.span
+          variants={componentVariant}
+          initial="hidden"
+          animate="show"
+          style={beforeStyles}
+        ></motion.span>
+      )}
     </figure>
   );
 };

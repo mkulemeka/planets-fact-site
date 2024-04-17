@@ -1,6 +1,8 @@
 import { PlanetContext } from "../context/PlanetProvider";
 import PropTypes from "prop-types";
+import { componentVariant } from "../animations/variants";
 import { images } from "../assets";
+import { motion } from "framer-motion";
 import { useContext } from "react";
 
 const IntroContainer = ({ planetData }) => {
@@ -27,7 +29,14 @@ const IntroContainer = ({ planetData }) => {
       <h1 className=" text-[3rem] uppercase font-medium font-antonio tracking-normal lg:text-heading">
         {planetData.name}
       </h1>
-      <p>{content()}</p>
+      <motion.p
+        initial="hidden"
+        animate="show"
+        variants={componentVariant}
+        key={activeButton}
+      >
+        {content()}
+      </motion.p>
       <div className="planet-section__details__source mt-3">
         <p className="inline">Source : </p>
         <a href={sourceLink()} className="font-medium underline">

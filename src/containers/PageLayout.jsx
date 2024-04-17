@@ -16,6 +16,7 @@ const PageLayout = ({ planetData }) => {
     <motion.section
       initial="hidden"
       animate="show"
+      exit="exit"
       variants={pageVariant}
       className="planet-section md:max-w-[90%] mx-auto gap-4 lg:gap-8 pb-4 md:mt-20"
     >
