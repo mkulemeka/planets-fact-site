@@ -1,4 +1,4 @@
-import "./pageLayout.scss";
+import "./scss/pageLayout.scss";
 
 import {
   ButtonsContainer,

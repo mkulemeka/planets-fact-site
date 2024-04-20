@@ -10,8 +10,15 @@ const Button = ({ text, handleClick, planetName, buttonID, number }) => {
       ? "border-opacity-100 font-bold"
       : "border-transparent border-opacity-0";
 
+  // set the background color for the active button on desktop
   const background = () => {
     if (activeButton === buttonID && windowWidth > 768)
+      return planetColors[planetName.toLowerCase()];
+  };
+
+  // set the border color for the active button on mobile
+  const borderColor = () => {
+    if (activeButton === buttonID && windowWidth < 768)
       return planetColors[planetName.toLowerCase()];
   };
 
@@ -22,6 +29,7 @@ const Button = ({ text, handleClick, planetName, buttonID, number }) => {
       onClick={handleClick}
       style={{
         background: background(),
+        borderColor: borderColor(),
       }}
     >
       {windowWidth > 768 ? (
