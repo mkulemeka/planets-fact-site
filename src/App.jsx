@@ -27,18 +27,19 @@ const App = () => {
         planetName === "Mercury" ? "/" : `/${planetName.toLowerCase()}`
       }`,
       element: (
-        <Planet key={planetName.toLocaleLowerCase()} planetData={planetData} />
+        <AnimatePresence mode="wait">
+          <Planet
+            key={planetName.toLocaleLowerCase()}
+            planetData={planetData}
+          />
+        </AnimatePresence>
       ),
     };
   });
 
   const router = createBrowserRouter([
     {
-      element: (
-        <AnimatePresence mode="wait">
-          <AppLayout planets={planets} />
-        </AnimatePresence>
-      ),
+      element: <AppLayout planets={planets} />,
       children: routes,
     },
   ]);

@@ -1,8 +1,7 @@
+import { Intro } from "../components";
 import { PlanetContext } from "../context/PlanetProvider";
 import PropTypes from "prop-types";
-import { componentVariant } from "../animations/variants";
 import { images } from "../assets";
-import { motion } from "framer-motion";
 import { useContext } from "react";
 
 const IntroContainer = ({ planetData }) => {
@@ -25,26 +24,13 @@ const IntroContainer = ({ planetData }) => {
   };
 
   return (
-    <section className="planet-section__details px-[1.5rem] flex flex-col text-center gap-6 md:text-left">
-      <h1 className=" text-[3rem] uppercase font-medium font-antonio tracking-normal lg:text-heading">
-        {planetData.name}
-      </h1>
-      <motion.p
-        initial="hidden"
-        animate="show"
-        variants={componentVariant}
-        key={activeButton}
-      >
-        {content()}
-      </motion.p>
-      <div className="planet-section__details__source mt-3">
-        <p className="inline">Source : </p>
-        <a href={sourceLink()} className="font-medium underline">
-          Wikipedia
-        </a>
-        <img src={source} alt="source" className="inline ml-1" />
-      </div>
-    </section>
+    <Intro
+      activeButton={activeButton}
+      content={content}
+      planetName={planetData.name}
+      source={source}
+      sourceLink={sourceLink}
+    />
   );
 };
 

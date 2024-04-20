@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { linkVariant, navVariant } from "../animations/variants";
 import { useContext, useEffect } from "react";
@@ -5,7 +6,6 @@ import { useContext, useEffect } from "react";
 import { PlanetContext } from "../context/PlanetProvider";
 import PropTypes from "prop-types";
 import { images } from "../assets";
-import { motion } from "framer-motion";
 
 const linkBeforeStyles = {
   content: "''",
@@ -41,12 +41,12 @@ const PlanetLinks = ({ planets, isNavOpen, setIsNavOpen }) => {
   };
 
   return (
-    <>
+    <AnimatePresence mode="wait">
       {isNavOpen && (
         <motion.ul
           {...(windowWidth < 768 && { initial: "hidden" })}
           animate="show"
-          exit={{ opacity: 0, transition: { duration: 0.5 } }}
+          exit="exit"
           variants={navVariant}
           className="flex flex-col md:flex-row md:justify-center md:gap-[2.0625rem] absolute md:static left-0 top-[4.25rem] uppercase w-full px-[1.5rem] pt-[1rem] md:pt-0 z-10 bg-darkBlue"
         >
@@ -83,7 +83,7 @@ const PlanetLinks = ({ planets, isNavOpen, setIsNavOpen }) => {
           ))}
         </motion.ul>
       )}
-    </>
+    </AnimatePresence>
   );
 };
 

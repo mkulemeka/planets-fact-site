@@ -13,7 +13,7 @@ import { pageVariant } from "../animations/variants";
 
 const PageLayout = ({ planetData }) => {
   return (
-    <motion.section
+    <motion.main
       initial="hidden"
       animate="show"
       exit="exit"
@@ -28,7 +28,7 @@ const PageLayout = ({ planetData }) => {
       />
       <IntroContainer planetData={planetData} />
       <StatsContainer planetData={planetData} />
-    </motion.section>
+    </motion.main>
   );
 };
 
